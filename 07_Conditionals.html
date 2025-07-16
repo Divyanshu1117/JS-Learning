@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        let a = prompt("Hey Whats Your Age?");
+        a = Number.parseInt(a) // Converting the string to a number
+        /* console.log(typeof a); */
+        if (a < 0) {
+            alert("This is an invalid age");
+        }
+        else if (a < 9) {
+            alert("You are a kid and you cannot even think of driving");
+        }
+        else if (a < 18 && a > 9) {
+            alert("You are a kid and you can think of driving after 18");
+        }
+        else {
+            alert("You can now drive as you are above 18");
+        }
+        console.log("Done");
+        console.log("You can", (a < 18 ? "not drive" : "drive"));
+
+        let dayNumber = 3; // Assume user input 3
+        let dayName;
+        switch (dayNumber) {
+            case 1:
+                dayName = "Monday";
+                break;
+            case 2:
+                dayName = "Tuesday";
+                break;
+            case 3:
+                dayName = "Wednesday";
+                break;
+            case 4:
+                dayName = "Thursday";
+                break;
+            case 5:
+                dayName = "Friday";
+                break;
+            case 6:
+                dayName = "Saturday";
+                break;
+            case 7:
+                dayName = "Sunday";
+                break;
+            default:
+                dayName = "Invalid day number";
+        }
+        console.log("Today is: " + dayName);
+
+        let age = 20;
+        let message = age >= 18 ? "You can vote" : "You are too young to vote";
+        console.log(message);
+
+        let number = 7;
+        let result = (number % 2 === 0) ? "Even" : "Odd";
+        console.log(result);
+
+        let marks = 85;
+        let grade = marks >= 90 ? "A" :
+            marks >= 75 ? "B" :
+            marks >= 60 ? "C" : "Fail";
+        console.log("Grade: " + grade);
+
+    </script>
+</body>
+
+</html>
