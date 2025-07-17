@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the number between 1 to 100</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+
+        // 1.) While Loop:-
+        /*let randomNumber = Math.floor(Math.random() * 100) + 1;
+        let guess = parseInt(prompt("Guess the number between 1 and 100:"));
+        while (guess !== randomNumber) {
+            if (guess < randomNumber) {
+                alert("Too low!");
+            } else {
+                alert("Too high!");
+            }
+            guess = parseInt(prompt("Guess again:"));
+        }
+        alert("Congratulations! You guessed it right: " + randomNumber);*/
+
+        //////////////////////////////////////////////////////////////////////////
+
+        /*let randomNumber = Math.floor(Math.random() * 100) + 1;
+        let maxChances = 30;
+        let attempts = 0;
+        let guess = parseInt(prompt("Guess the number between 1 and 100. You have " + maxChances + " chances."));
+        while (guess !== randomNumber && attempts < maxChances - 1) {
+            attempts++;
+            if (guess < randomNumber) {
+                alert("Too low! Chances left: " + (maxChances - attempts));
+            } else {
+                alert("Too high! Chances left: " + (maxChances - attempts));
+            }
+            guess = parseInt(prompt("Guess again:"));
+        }
+
+        // Last check after loop
+        if (guess === randomNumber) {
+            alert("Congratulations! You guessed the number in " + (attempts + 1) + " attempts.");
+        } else {
+            alert("Game Over! The number was " + randomNumber);
+        }*/
+
+        // 2.) Do...While loop:-
+        /*let randomNumber = Math.floor(Math.random() * 100) + 1;
+        let maxChances = 30;
+        let attempts = 0;
+        let guess;
+
+        do {
+            guess = parseInt(prompt(`Guess the number (1-100). Chances left: ${maxChances - attempts}`));
+            if (guess === randomNumber) break;
+
+            if (guess < randomNumber) {
+                alert("Too low!");
+            } else {
+                alert("Too high!");
+            }
+            attempts++;
+        } while (attempts < maxChances);
+
+        if (guess === randomNumber) {
+            alert(`Correct! You guessed it in ${attempts + 1} attempts.`);
+        } else {
+            alert(`Game Over! The number was ${randomNumber}.`);
+        }*/
+
+        // 3.) For...loop:-
+        /*let randomNumber = Math.floor(Math.random() * 100) + 1;
+        let maxChances = 10;
+        let guess;
+
+        for (let attempts = 0; attempts < maxChances; attempts++) {
+            guess = parseInt(prompt(`Guess the number (1-100). Chances left: ${maxChances - attempts}`));
+
+            if (guess === randomNumber) {
+                alert(`Correct! You guessed it in ${attempts + 1} attempts.`);
+                break;
+            } else if (guess < randomNumber) {
+                alert("Too low!");
+            } else {
+                alert("Too high!");
+            }
+
+            if (attempts === maxChances - 1) {
+                alert(`Game Over! The number was ${randomNumber}.`);
+            }
+        }*/
+
+        // 4.) For...of loop:-
+        /*let randomNumber = Math.floor(Math.random() * 100) + 1;
+        let maxChances = 10;
+        let chances = Array(maxChances).fill(null);
+        let guess;
+        let attempts = 0;
+
+        for (const _ of chances) {
+            guess = parseInt(prompt(`Guess the number (1-100). Chances left: ${maxChances - attempts}`));
+
+            if (guess === randomNumber) {
+                alert(`Correct! You guessed it in ${attempts + 1} attempts.`);
+                break;
+            } else if (guess < randomNumber) {
+                alert("Too low!");
+            } else {
+                alert("Too high!");
+            }
+            attempts++;
+
+            if (attempts === maxChances) {
+                alert(`Game Over! The number was ${randomNumber}.`);
+            }
+        }*/
+
+        // 5.) For...in loop
+        /*let randomNumber = Math.floor(Math.random() * 100) + 1;
+        let chances = new Array(10);
+        let guess;
+
+        for (let index in chances) {
+            guess = parseInt(prompt(`Guess the number (1-100). Chances left: ${10 - index}`));
+
+            if (guess === randomNumber) {
+                alert(`Correct! You guessed it in ${parseInt(index) + 1} attempts.`);
+                break;
+            } else if (guess < randomNumber) {
+                alert("Too low!");
+            } else {
+                alert("Too high!");
+            }
+
+            if (parseInt(index) === chances.length - 1) {
+                alert(`Game Over! The number was ${randomNumber}.`);
+            }
+        }*/
+
+        // 6.) ForEach Loop:-
+        /*let randomNumber = Math.floor(Math.random() * 100) + 1;
+        let chances = Array(10).fill(null);
+        let guess;
+        let correct = false;
+
+        chances.forEach((_, i) => {
+            if (correct) return; // agar mil gaya toh skip
+            guess = parseInt(prompt(`Guess the number (1-100). Chances left: ${chances.length - i}`));
+
+            if (guess === randomNumber) {
+                alert(`Correct! You guessed it in ${i + 1} attempts.`);
+                correct = true;
+            } else if (guess < randomNumber) {
+                alert("Too low!");
+            } else {
+                alert("Too high!");
+            }
+
+            if (i === chances.length - 1 && !correct) {
+                alert(`Game Over! The number was ${randomNumber}.`);
+            }
+        });*/
+
+        // 7.) Using Map:-
+        /*let randomNumber = Math.floor(Math.random() * 100) + 1;
+        let chances = Array(10).fill(null);
+        let correct = false;
+
+        chances.map((_, i) => {
+            if (correct) return;
+            let guess = parseInt(prompt(`Guess the number (1-100). Chances left: ${chances.length - i}`));
+
+            if (guess === randomNumber) {
+                alert(`Correct! You guessed in ${i + 1} attempts.`);
+                correct = true;
+            } else {
+                alert(guess < randomNumber ? "Too low!" : "Too high!");
+            }
+
+            if (i === chances.length - 1 && !correct) {
+                alert(`Game Over! The number was ${randomNumber}.`);
+            }
+        });*/
+
+        // 8.) Using Filter:-
+        /*let randomNumber = Math.floor(Math.random() * 100) + 1;
+        let maxChances = 10;
+        let chances = Array(maxChances).fill(null);
+        let correct = false;
+
+        chances.filter((_, i) => {
+            if (correct) return false; // agar number mil gaya toh aage nahi jana
+            let guess = parseInt(prompt(`Guess the number (1-100). Chances left: ${maxChances - i}`));
+
+            if (guess === randomNumber) {
+                alert(`Correct! You guessed in ${i + 1} attempts.`);
+                correct = true;
+            } else {
+                alert(guess < randomNumber ? "Too low!" : "Too high!");
+            }
+            if (i === maxChances - 1 && !correct) {
+                alert(`Game Over! The number was ${randomNumber}`);
+            }
+
+            return true; // filter ko satisfy karne ke liye
+        });*/
+
+        // 9.) Using Filter:-
+        /*let randomNumber = Math.floor(Math.random() * 100) + 1;
+        let chances = Array(10).fill(null);
+        let correct = false;
+
+        chances.filter((_, i) => {
+            if (correct) return false;
+
+            let guess = parseInt(prompt(`Guess the number (1-100). Chances left: ${chances.length - i}`));
+
+            if (guess === randomNumber) {
+                alert(`Correct! You guessed in ${i + 1} attempts.`);
+                correct = true;
+                return true; // condition met
+            } else {
+                alert(guess < randomNumber ? "Too low!" : "Too high!");
+                return false;
+            }
+        });
+
+        if (!correct) {
+            alert(`Game Over! The number was ${randomNumber}.`);
+        }*/
+
+        // 10.) Using Reduce:-
+        /*let randomNumber = Math.floor(Math.random() * 100) + 1;
+        let maxChances = 10;
+        let chances = Array(maxChances).fill(null);
+
+        chances.reduce((acc, _, i) => {
+            if (acc.correct) return acc; // agar number mil gaya toh skip
+            let guess = parseInt(prompt(`Guess the number (1-100). Chances left: ${maxChances - i}`));
+
+            if (guess === randomNumber) {
+                alert(`Correct! You guessed in ${i + 1} attempts.`);
+                acc.correct = true;
+            } else {
+                alert(guess < randomNumber ? "Too low!" : "Too high!");
+            }
+
+            if (i === maxChances - 1 && !acc.correct) {
+                alert(`Game Over! The number was ${randomNumber}`);
+            }
+
+            return acc;
+        }, { correct: false });*/
+
+
+
+        // 11.) Using Reduce:-
+        /*let randomNumber = Math.floor(Math.random() * 100) + 1;
+        let chances = Array(10).fill(null);
+
+        chances.reduce((acc, _, i) => {
+            if (acc.correct) return acc; // stop further processing
+
+            let guess = parseInt(prompt(`Guess the number (1-100). Chances left: ${chances.length - i}`));
+
+            if (guess === randomNumber) {
+                alert(`Correct! You guessed in ${i + 1} attempts.`);
+                acc.correct = true;
+            } else {
+                alert(guess < randomNumber ? "Too low!" : "Too high!");
+            }
+
+            if (i === chances.length - 1 && !acc.correct) {
+                alert(`Game Over! The number was ${randomNumber}.`);
+            }
+
+            return acc;
+        }, { correct: false });*/
+
+        // 12.)Recursion (Function calls instead of loops)
+        /*function guessGame(randomNumber, attempts, maxChances) {
+            if (attempts >= maxChances) {
+                alert(`Game Over! The number was ${randomNumber}`);
+                return;
+            }
+
+            let guess = parseInt(prompt(`Guess the number (1-100). Chances left: ${maxChances - attempts}`));
+
+            if (guess === randomNumber) {
+                alert(`Correct! You guessed in ${attempts + 1} attempts.`);
+            } else {
+                alert(guess < randomNumber ? "Too low!" : "Too high!");
+                guessGame(randomNumber, attempts + 1, maxChances);
+            }
+        }
+
+        let randomNumber = Math.floor(Math.random() * 100) + 1;
+        guessGame(randomNumber, 0, 10);*/
+
+        // 13.) while(true) + break (Infinite loop approach)
+        /*let randomNumber = Math.floor(Math.random() * 100) + 1;
+        let maxChances = 10;
+        let attempts = 0;
+
+        while (true) {
+            let guess = parseInt(prompt(`Guess (1-100). Chances left: ${maxChances - attempts}`));
+
+            if (guess === randomNumber) {
+                alert(`Correct! You guessed in ${attempts + 1} attempts.`);
+                break;
+            }
+
+            alert(guess < randomNumber ? "Too low!" : "Too high!");
+            attempts++;
+
+            if (attempts >= maxChances) {
+                alert(`Game Over! The number was ${randomNumber}`);
+                break;
+            }
+        }*/
+
+        // 14.) Custom Iterator + for...of
+        /*function* chancesGenerator(maxChances) {
+            for (let i = 0; i < maxChances; i++) {
+                yield i;
+            }
+        }
+
+        let randomNumber = Math.floor(Math.random() * 100) + 1;
+        let maxChances = 10;
+        let guess;
+        let correct = false;
+
+        for (let attempt of chancesGenerator(maxChances)) {
+            guess = parseInt(prompt(`Guess (1-100). Chances left: ${maxChances - attempt}`));
+
+            if (guess === randomNumber) {
+                alert(`Correct! You guessed in ${attempt + 1} attempts.`);
+                correct = true;
+                break;
+            } else {
+                alert(guess < randomNumber ? "Too low!" : "Too high!");
+            }
+        }
+
+        if (!correct) {
+            alert(`Game Over! The number was ${randomNumber}`);
+        }*/
+    </script>
+</body>
+</html>
