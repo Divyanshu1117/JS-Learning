@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="showBOM()">Show BOM Info</button>
+    <script type="text/javascript">
+        /*window.console.log(window);
+        console.log(alert);
+        window.console.log(alert);
+        // Winodw Object is Global Object 
+        console.log(document);  // Representation of Java Script.
+        console.log(document.body);
+        document.body.style.background = "yellow";
+        alert("DV");*/
+        // console.log(location.href); // current URL
+        // location.href = "https://google.com"; // page redirect
+        function showBOM() {
+            console.log(window.innerHeight, window.innerWidth); // browser window size
+            console.log(location.href); // current URL
+            console.log(navigator.userAgent); // browser info
+        }
+    </script>
+</body>
+
+</html>

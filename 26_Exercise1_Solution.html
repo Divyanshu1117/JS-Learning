@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guessing Game</title>
+</head>
+
+<body>
+    <h1>Number Guessing Game</h1>
+    <script>
+        // 1.) Method:-
+        /*let number = Math.floor(Math.random() * 100) + 1;
+        let chances = 0;
+        let guess;
+
+        alert("Welcome to Guessing Game!\nGuess the number between 1 and 100");
+
+        do {
+            guess = prompt("Enter your guess:");
+            guess = Number.parseInt(guess);
+            ++chances;
+
+            if (guess > number) {
+                alert("Too high! Try again.");
+            } else if (guess < number) {
+                alert("Too low! Try again.");
+            }
+
+        } while (guess !== number);
+
+        let score = Math.max(0, 100 - chances);
+        alert(`🎉 Congratulations!\nThe number was ${number}\nYour score is: ${score}`);*/
+
+        //2.)Method
+        let number = Math.floor(Math.random() * 100) + 1;
+        let chances = 0;
+        let guess;
+
+        alert("Welcome to Guessing Game!\nGuess the number between 1 and 100");
+
+        do {
+            guess = prompt("Enter your guess:");
+            guess = Number.parseInt(guess);
+            ++chances;
+
+            if (guess > number) {
+                alert("Too high! Try again.");
+            } else if (guess < number) {
+                alert("Too low! Try again.");
+            }
+
+        } while (guess !== number);
+
+        let score = Math.max(0, 100 - chances);
+        alert(`🎉 Congratulations!\nThe number was ${number}\nYour score is: ${score}`);
+    </script>
+</body>
+
+</html>
