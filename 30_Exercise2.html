@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Snake Water Gun Game</h2>
+    <script type="text/javascript">
+
+        // Options
+        let choices = ["snake", "water", "gun"];
+
+        // User input
+        let user = prompt("Enter Snake, Water or Gun").toLowerCase();
+
+        // Computer random choice
+        let computer = choices[Math.floor(Math.random() * 3)];
+
+        // Show choices
+        alert("You chose: " + user + "\nComputer chose: " + computer);
+
+        // Game logic
+        if (user === computer) {
+            alert("It's a Draw!");
+        }
+        else if (
+            (user === "snake" && computer === "water") ||
+            (user === "water" && computer === "gun") ||
+            (user === "gun" && computer === "snake")
+        ) {
+            alert("You Win!");
+        }
+        else {
+            alert("You Lose!");
+        }
+    </script>
+</body>
+
+</html>

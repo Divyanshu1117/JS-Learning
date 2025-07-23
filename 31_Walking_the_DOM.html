@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="main">
+        <h1>DOM Walking</h1>
+        <p id="p1">Paragraph 1</p>
+        <p id="p2">Paragraph 2</p>
+        <button id="btn">Click Me</button>
+    </div>
+    <script type="text/javascript">
+        // Example 1: Parent Node
+        let p1 = document.getElementById("p1");
+        console.log("Parent of p1:", p1.parentNode);
+
+        // Example 2: All Children of main
+        let main = document.getElementById("main");
+        console.log("Children of main:", main.children);
+
+        // Example 3: First Child of main
+        console.log("First child of main:", main.firstElementChild);
+
+        // Example 4: Last Child of main
+        console.log("Last child of main:", main.lastElementChild);
+
+        // Example 5: Next Sibling of p1
+        console.log("Next sibling of p1:", p1.nextElementSibling);
+
+        // Example 6: Previous Sibling of p2
+        let p2 = document.getElementById("p2");
+        console.log("Previous sibling of p2:", p2.previousElementSibling);
+
+        // Example 7: Access body children
+        console.log("Body children:", document.body.children);
+
+        // Example 8: Access document root element
+        console.log("Document root element (html):", document.documentElement);
+
+        // Example 9: Find closest ancestor
+        let btn = document.getElementById("btn");
+        console.log("Closest div to button:", btn.closest("div"));
+
+        // Example 10: Loop through all children of main
+        console.log("Looping through main children:");
+        for (let child of main.children) {
+            console.log(" -", child.tagName, ":", child.innerText);
+        }
+
+    </script>
+</body>
+
+</html>
