@@ -1,72 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Joke Generator</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 100px;
-            background-color: #f0f0f0;
-        }
-
-        #jokeBox {
-            margin: 20px auto;
-            padding: 20px;
-            width: 60%;
-            background-color: white;
-            border: 2px solid #ccc;
-            border-radius: 10px;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-            font-size: 18px;
-        }
-
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: teal;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: darkcyan;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>One Joke</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; margin-top: 50px; }
+    #jokeBox { font-size: 20px; margin-top: 30px; }
+    button { padding: 10px 20px; font-size: 16px; }
+  </style>
 </head>
-
 <body>
 
-    <h2>😂 Random Joke Generator</h2>
-    <button onclick="showJoke()">Show me a joke</button>
+  <h2>😂 Random Joke Generator</h2>
+  <button onclick="showJoke()">Show Joke</button>
 
-    <div id="jokeBox">Click the button to get a joke!</div>
+  <div id="jokeBox">Click the button to see a joke</div>
 
-    <script>
-        const jokes = [
-            "Why don’t scientists trust atoms? Because they make up everything!",
-            "Why did the bicycle fall over? Because it was two-tired!",
-            "I told my computer I needed a break, and it said 'No problem, I’ll go to sleep.'",
-            "Why did the scarecrow win an award? Because he was outstanding in his field!",
-            "I'm reading a book on anti-gravity. It's impossible to put down!",
-            "Why don’t skeletons fight each other? They don’t have the guts.",
-            "Why did the math book look sad? Because it had too many problems.",
-            "I asked the dog what's two minus two. He said nothing.",
-            "Parallel lines have so much in common. It’s a shame they’ll never meet.",
-            "Why can’t your nose be 12 inches long? Because then it would be a foot!"
-        ];
+  <script>
+    const jokes = [
+      "Why don’t scientists trust atoms? Because they make up everything!",
+      "I'm reading a book on anti-gravity. It's impossible to put down!",
+      "Why don’t skeletons fight each other? They don’t have the guts.",
+      "Why did the math book look sad? Because it had too many problems.",
+      "Parallel lines have so much in common. It’s a shame they’ll never meet.",
+      "Why did the scarecrow win an award? Because he was outstanding in his field!",
+      "Why can’t your nose be 12 inches long? Because then it would be a foot!",
+      "I told my computer I needed a break, and it said 'No problem, I’ll go to sleep.'",
+      "Why did the bicycle fall over? Because it was two-tired!",
+      "I asked the dog what's two minus two. He said nothing."
+    ];
 
-        function showJoke() {
-            const index = Math.floor(Math.random() * jokes.length);
-            document.getElementById("jokeBox").innerText = jokes[index];
-        }
-    </script>
+    function showJoke() {
+      let index = Math.floor(Math.random() * jokes.length);
+      document.getElementById("jokeBox").innerHTML = `"${jokes[index]}"`;
+    }
+  </script>
 
 </body>
-
 </html>
