@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>matches() & closest() Example</title>
+</head>
+
+<body>
+    <div class="box" id="id1">
+        This is element 1
+        <span id="sp1">Span 1</span>
+    </div>
+
+    <div class="box" id="id2">
+        This is element 2
+    </div>
+
+    <script type="text/javascript">
+        let id1 = document.getElementById("id1");
+        console.log(id1);
+
+        // Check if id1 has a certain class
+        console.log(id1.matches(".class")); // false, because it has class "box" not "class"
+        console.log(id1.matches(".box"));   // true
+
+        // Get the span and find closest ancestor with class 'box'
+        let sp1 = document.getElementById("sp1");
+        console.log(sp1.closest(".box"));   // returns the div with id="id1"
+        console.log(sp1.closest("#sp1"));
+        console.log(id1.contains(sp1));
+        console.log(sp1.contains(sp1));
+        console.log(sp1.contains(id1));
+    </script>
+</body>
+
+</html>

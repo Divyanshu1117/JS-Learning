@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+</head>
+
+<style type="text/css">
+
+</style>
+
+<body>
+    <div class="container my-4">
+        <table class="table">
+            <caption>Yable of legends</caption>
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>John</td>
+                    <td>Doe</td>
+                    <td>@social</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script type="text/javascript">
+        let t = document.body.firstElementChild.firstElementChild;
+        console.log(t);
+        console.log("rows:", t.rows);
+        console.log("caption:", t.caption);
+        console.log("thead:", t.tHead);
+        console.log("thead row:", t.tHead.firstElementChild);
+        console.log("tbodies:", t.tBodies);
+        console.log("tbody[0]:", t.tBodies[0]);
+        console.log("2nd row's index:", t.rows[1].rowIndex);
+        console.log("2nd row's cells:", t.rows[1].cells);
+        console.log("All rows (thead + tbody + tfoot):", t.rows);
+        console.log("Header rows (thead):", t.tHead.rows);
+        console.log("Body rows (tbody[0]):", t.tBodies[0].rows);
+        // Check and log all <tr> rows inside the <tfoot> section of the table.
+        // Make sure that <tfoot> exists in the HTML, otherwise this will throw an error.
+        // console.log("Footer rows (tfoot):", t.tFoot.rows);
+        // If there is multiple <tbody> then
+        // console.log("Body rows (tbody[1]):", t.tBodies[1].rows);
+
+        // Quick Quiz:-
+        console.log("typeof document:", typeof document);
+        console.log("typeof window:", typeof window); 
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    nav {
+        display: flex;
+        background-color: red;
+        padding: 10px;
+    }
+
+    nav ul {
+        display: flex;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav li {
+        list-style: none;
+        padding: 0 23px;
+    }
+</style>
+
+<body>
+    <nav>
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Blog</li>
+            <li>Contact</li>
+        </ul>
+    </nav>
+    <script type="text/javascript">
+        document.getElementsByTagName("nav")[0].firstElementChild.children[0].style.color = "green";
+        document.getElementsByTagName("nav")[0].firstElementChild.children[3].style.color = "green";
+        Array.from(document.getElementsByTagName("li")).forEach((element) => {
+            element.style.background = "cyan";
+        });
+    </script>
+    <!-- 38_Chapter7 Q5_PS -->
+    <!-- Q5:- Which of the following is used to look for the farthest ancestor that matches a gievn css selector
+      a.) matches b.) closest c.) contains d.) none of these -->
+    <!-- Ans:- None Of These -->
+</body>
+
+</html>
