@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>innerHTML & outerHTML Demo</title>
+</head>
+
+<body>
+
+    <!-- <span id="first"><b>Hey</b> I am span</span> -->
+    <span id="first" hidden><b>Hey</b> I am span</span>
+
+    <script type="text/javascript">
+
+        // Select the span element
+        // let x = document.getElementsByTagName('span')[0];
+        // console.log(x);                // Show as HTML
+        // console.dir(x);                // Show as JS object
+
+        // Node info
+        // console.log(document.body.firstChild.nodeName);        // #text
+        // console.log(document.body.firstElementChild.nodeName); // SPAN
+
+        // Modify innerHTML
+        // x.innerHTML = "<i> Hey I am italic</i>";
+        // console.log("After innerHTML:", x.innerHTML);          // Prints updated inner content
+
+        // Modify innerHTML again
+        // x.innerHTML = "<u> Hey I am underlined</u>";
+        // console.log("After 2nd innerHTML:", x.innerHTML);
+
+        // Show outerHTML
+        // console.log("Current outerHTML:", x.outerHTML);        // Includes tag itself
+
+        // Replace entire element with a <div>
+        // x.outerHTML = "<div>Hey</div>";
+
+        // Note: After outerHTML replacement, 'x' variable still points to old span (which is now removed from DOM)
+        // console.log("x (old reference):", x);                  // Still old <span>
+
+        /*let fc = document.body.firstChild;
+        console.log("nodeType:", fc.nodeType);     // 3 means #text
+        console.log("nodeName:", fc.nodeName);     // "#text" or "SPAN"
+        console.log("nodeValue:", fc.nodeValue);   // whitespace OR null
+        console.log(document.body.textContent);*/
+    </script>
+
+</body>
+
+</html>
