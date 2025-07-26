@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style type="text/css">
+    html,
+    body {
+        height: 100%;
+        width: 100%
+    }
+
+    .yellow {
+        background-color: yellow;
+        color: white;
+    }
+
+    .red {
+        background-color: red;
+        color: white;
+    }
+
+    .text-dark {
+        color: black;
+    }
+</style>
+
+<body>
+    <div id="first" class="yellow text-dark">
+        <span>Hey iam gud</span>
+    </div>
+    <script type="text/javascript">
+        let first = document.getElementById("first");
+        // first.className = "text-blackred red";
+        // first.classList.add("red");
+        // first.classList.remove("red");
+        // console.log(first.className);
+
+        // first.classList.toggle("red");
+        //console.log("Final classes:", first.className);
+
+        let hasRed = first.classList.contains("red");
+        console.log("Red class present?", hasRed);
+
+    </script>
+
+</body>
+
+</html>
