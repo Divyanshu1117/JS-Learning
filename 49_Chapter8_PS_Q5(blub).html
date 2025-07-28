@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Realistic Bulb</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #111;
+        }
+
+        .bulb {
+            height: 150px;
+            width: 150px;
+            background: yellow;
+            border-radius: 50%;
+            box-shadow: 0 0 60px 20px yellow;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .bulb.off {
+            background: #444;
+            box-shadow: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="bulb" class="bulb"></div>
+
+    <script>
+        setInterval(function () {
+            document.getElementById("bulb").classList.toggle("off");
+        }, 500);
+    </script>
+</body>
+
+</html>

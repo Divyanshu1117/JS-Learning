@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <button id="btn">Click Me</button>
+    </div>
+    <script type="text/javascript">
+        let x = function (e) {
+            console.log(e.target);// The element on which the event was triggered.
+            console.log(e.type);// The type of the event (e.g., "click", "keydown").
+            console.log(e.clientX);// The horizontal coordinate (X) of the mouse pointer when the event occurred.
+            console.log(e.clientY);// The vertical coordinate (Y) of the mouse pointer when the event occurred.
+            console.log(e);// The full event object containing all event-related properties.
+            // alert("Hello World1!");
+        }
+        /*let y = function (e) {
+            console.log(e);
+            alert("Hello World2!");
+        }*/
+        btn.addEventListener('click', x);
+        // btn.addEventListener('click', y);
+
+        /*let a = prompt("What is your favorite number?");
+        if (a == "2") {
+            btn.removeEventListener('click', x);
+        }*/
+    </script>
+</body>
+
+</html>
