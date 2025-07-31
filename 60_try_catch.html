@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        setTimeout(() => {
+            console.log("Hacking wifi.... Please wait....");
+        }, 1000);
+        /*try {
+            setTimeout(() => {
+                console.log(rahul);
+            }, 100);
+            console.log(rahul);
+        }
+        catch (error) {
+            console.log(error);
+        }*/
+
+        setTimeout(() => {
+            try {
+                console.log(rahul);  // error
+                console.log(rahul);  // error again
+            } catch (error) {
+                console.log("Caught:", error.message);
+            }
+        }, 100);
+
+        setTimeout(() => {
+            console.log("Fetching username and password.... Please Wait....");
+        }, 2000);
+        setTimeout(() => {
+            console.log("Hacking Rahul's facebook id.... Please wait....");
+        }, 3000);
+        setTimeout(() => {
+            console.log("Username and password of rahul (+919356700000) fetched.... Please Wait....");
+        }, 4000);
+    </script>
+</body>
+
+</html>

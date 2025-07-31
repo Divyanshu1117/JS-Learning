@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        /*let p1 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve("Value 1");
+            }, 4000);
+        });
+        let p2 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve("Value 2");
+                // reject(new Error("Error"));
+            }, 1000);
+        });
+        let p3 = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve("Value 3");
+            }, 3000);
+        });*/
+
+        /*p1.then((value) => {
+            console.log(value);
+        });
+
+        p2.then((value) => {
+            console.log(value);
+        });
+
+        p3.then((value) => {
+            console.log(value);
+        });*/
+
+        // 1.) Promise.all Method:-
+        /*let promise_all = Promise.all([p1, p2, p3]);
+        promise_all.then((value) => {
+            console.log(value);
+        });*/
+
+        // 2.) Promise.all settled(promises):- 
+        /*let promise_all = Promise.allSettled([p1, p2, p3]);
+        promise_all.then((value) => {
+            console.log(value);
+        });*/
+
+        // 3.) Promise.race(promises):-
+        /*let promise_all = Promise.race([p1, p2, p3]);
+        promise_all.then((value) => {
+            console.log(value);
+        });*/
+
+        // 4.) Promise.any(promises):-
+        /*let promise_all = Promise.any([p1, p2, p3]);
+        promise_all.then((value) => {
+            console.log(value);
+        });*/
+
+        // 5.) Promise.resolve(value):-
+        /*let promise_all = Promise.resolve(6);
+        promise_all.then((value) => {
+            console.log(value);
+        });*/
+
+        // 6.) Promise.reject(error):-
+        /*let promise_all = Promise.reject(new Error("Hey"));
+        promise_all.then((value) => {
+            console.log(value);
+        });*/
+
+        // Quick Quiz:-
+        // Custom Promises:-
+        let a = new Promise((resolve, reject) => {
+            setTimeout(() => resolve("A done"), 3000);  // resolves in 3s:-
+        });
+
+        let b = new Promise((resolve, reject) => {
+            setTimeout(() => reject("B failed"), 2000); // rejects in 2s:-
+        });
+
+        let c = new Promise((resolve, reject) => {
+            setTimeout(() => resolve("C done"), 1000);  // resolves in 1s:-
+        });
+
+        // 1.) Promise.all — fails fast if any reject:-
+        Promise.all([a, b, c])
+            .then((result) => console.log("1. ALL success:", result))
+            .catch((err) => console.error("1. ALL failed:", err));
+        // Output: 1. ALL failed: B failed (after 2s):-
+
+
+        // 2️.) Promise.allSettled — All results will be received:-
+        Promise.allSettled([a, b, c])
+            .then((results) => console.log("2. ALL Settled:", results));
+        // Output (after 3s):-
+        /*
+        2. ALL Settled: [
+            { status: "fulfilled", value: "A done" },
+            { status: "rejected", reason: "B failed" },
+            { status: "fulfilled", value: "C done" }
+        ]
+        */
+
+
+        // 3.) Promise.race — Whichever finishes first will be returned first:-
+        Promise.race([a, b, c])
+            .then((result) => console.log("3. RACE won:", result))
+            .catch((err) => console.error("3. RACE failed:", err));
+        // Output: 3. RACE won: C done (after 1s):-
+
+
+        // 4.) Promise.any — Whichever resolves successfully first will be returned:-
+        Promise.any([a, b, c])
+            .then((result) => console.log("4. ANY success:", result))
+            .catch((err) => console.error("4. ANY failed:", err));
+        // Output: 4. ANY success: C done (after 1s):-
+
+
+        // 5️.) Promise.resolve — immediately resolve:-
+        Promise.resolve("Instant Value")
+            .then((value) => console.log("5. RESOLVE:", value));
+        // Output: 5. RESOLVE: Instant Value (immediately):-
+
+
+        // 6.) Promise.reject — immediately reject:-
+        Promise.reject("Some error")
+            .then((value) => console.log("6. REJECT success:", value))
+            .catch((err) => console.error("6. REJECT failed:", err));
+        // Output: 6. REJECT failed: Some error (immediately):-
+
+
+        // 7.) Bonus: Then chain with rejection and catch:-
+        let p = Promise.reject("Oops!");
+        p.then(() => console.log("7. Then 1"))
+            .then(() => console.log("7. Then 2"))
+            .catch((err) => console.error("7. Caught:", err))
+            .then(() => console.log("7. Then after catch"));
+        // Output:
+        /*
+        7. Caught: Oops!
+        7. Then after catch
+        */
+    </script>
+</body>
+
+</html>
