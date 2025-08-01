@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackerman</title>
+    <style>
+        body {
+            background-color: black;
+            color: #00FF00;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 20px;
+        }
+
+        #output {
+            white-space: pre-line;
+            font-size: 18px;
+        }
+
+        .blinking-cursor {
+            font-weight: bold;
+            animation: blink 1s step-start infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>⚠️ Someone is hacking your system...</h1>
+    <div id="output">Initializing...</div>
+    <div class="blinking-cursor">█</div>
+    <script>
+        const output = document.getElementById("output");
+        const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+        const hackerLines = [
+            "Initializing hack program...",
+            "Hacking Lovish's username...",
+            "Username found: Lovish Kamboj",
+            "Connecting to Facebook...",
+            "Trying brute force password...",
+            "Password matched: lovish@123",
+            "Fetching private messages...",
+            "Logging out...",
+            "Hack complete"
+        ];
+        async function hackerman() {
+            output.innerHTML = "";
+            for (let line of hackerLines) {
+                output.innerHTML += line + "\n";
+                await sleep(1000);  // 1-second delay
+            }
+        }
+        hackerman();
+    </script>
+</body>
+
+</html>
