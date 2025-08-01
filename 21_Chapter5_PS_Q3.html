@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q3 - Filter % 10</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        let arr = [1, 2, 30, 4, 50, 6, 7, 83, 670];
+        let n = arr.filter((x) => {
+            return x % 10 === 0;
+        });
+        console.log(n); // [30, 50, 670]
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        const f = () => {
+            try {
+                let a = 0;
+                // let program = "My Awesome Program";
+                console.log(program);
+                console.log("Program ran successfully");
+                return; // Even after return, finally block will still run:-
+            } catch (error) {
+                console.log("This is an error");
+                let p = "Handled properly";
+                console.log(p);
+            }
+            finally {
+                // This block always runs no matter what:-
+                console.log("I am a good boy");
+
+                // Real-life tasks where finally block is useful:-
+                // Close the file:-
+                // Suppose you're reading a file — finally can be used to close it safely:-
+
+                // Exit the loop:-
+                // If you were in a loop and wanted to break cleanly after an error:-
+
+                // Write to the log file:-
+                // Even if your app crashes, you can log the issue here:-
+            }
+        }
+        f(); // Call the function:-
+        console.log("End");
+    </script>
+
+</body>
+
+</html>

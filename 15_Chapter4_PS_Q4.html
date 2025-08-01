@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q4 - Slice & Parse</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        let str2 = "Please give Rs 1000";
+        let amount = str2.slice("Please give Rs".length);  // from index 15
+        let amount1 = str2.slice(15);                      // same as above
+        let amount3 = Number.parseInt(str2.slice(15));
+
+        console.log(amount);       // " 1000"
+        console.log(amount1);      // " 1000"
+        console.log(typeof amount);   // string
+        console.log(typeof amount3);  // number
+    </script>
+</body>
+
+</html>
