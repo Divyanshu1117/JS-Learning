@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        let p = fetch("http://goweather.xyz/weather/NewDelhi");
+        p.then((response) => {
+            // console.log(value1.status);
+            // console.log(value1.ok);
+            // return value1.json();
+
+            console.log(response.headers);
+            console.log(response.status);
+            console.log(response.ok);
+            // console.log(response.text()); // Use response.text() or response.json() depending on the API response — use text() for plain text, json() for JSON data
+            return response.json();
+        }).then((value2) => {
+            console.log(value2);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        // alert(document.cookie);
+        // alert(document.cookie = "name=Divyanshu1117"); // Adds name in cookie
+
+        console.log(document.cookie);
+        document.cookie = "name=harry1122334400";
+        document.cookie = "name2=harry11223344002";
+        document.cookie = "name=harry";
+
+        let key = prompt("Enter your key");
+        let value = prompt("Enter your value");
+        document.cookie`${encodeURIComponent(key)}=${encodeURIComponent(value)}`;
+        //decodeURIComponent                               
+        console.log(document.cookie);
+        // Quick Quiz:- Print all the cookies on twitter.com.
+        // Go to twitter.com
+        // Open DevTools(F12 or Ctrl + Shift + I)
+        // Go to the Console tab
+        // Paste and run:
+        // console.log(document.cookie);
+        // Output:- guest_id_marketing=v1%3A175369863780963058; guest_id_ads=v1%3A175369863780963058; guest_id=v1%3A175369863780963058; personalization_id="v1_hSUtcvX57n8q+6Q+xylz/Q=="; ct0=7d6eb8bc361a34e88fbbaae9a81cb61f1b754550bee3a5e998ac4f53155c138a207a2bee9e2cad2574f7c79e77e6a09a79a4f3a34f855e8383d2fbce3b5210ce7d89237434040abe9b745c70d4ad90bf; twid=u%3D1440752715982794763; lang=en; __cuid=20070b13e53044a6a70dbca5d000dcd9; external_referer=padhuUp37zjgzgv1mFWxJ12Ozwit7owX|0|8e8t2xd8A2w%3D
+    </script>
+</body>
+
+</html>
