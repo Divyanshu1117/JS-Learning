@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        let n = localStorage.getItem("note");
+        alert("Your note is " + n);
+
+        let a = prompt("Enter your note");
+        if (a) {
+            localStorage.setItem("note", a);
+        };
+    </script>
+
+</body>
+
+</html>
