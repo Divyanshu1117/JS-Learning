@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        /*sessionStorage.setItem("name", "Divyanshu");
+        console.log("Stored name:", sessionStorage.getItem("name"));
+        sessionStorage.removeItem("name");
+        console.log("After removal:", sessionStorage.getItem("name"));
+        sessionStorage.clear();*/
+
+        /*window.onstorage = (e) => {
+            alert("Storage changed!");
+            console.log("Key:", e.key);
+            console.log("Old Value:", e.oldValue);
+            console.log("New Value:", e.newValue);
+            console.log("URL:", e.url);
+        };*/
+
+        window.onstorage = (e) => {
+            console.log("Key Changed:", e.key);
+            console.log("Old Value:", e.oldValue);
+            console.log("New Value:", e.newValue);
+            console.log("Set by setItem()");
+        };
+    </script>
+</body>
+
+</html>

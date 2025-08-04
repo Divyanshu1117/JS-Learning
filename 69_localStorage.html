@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        // Ask the user for a key to store:-
+        let key = prompt("Enter key you want to set");
+
+        // Ask the user for a value to store:-
+        let value = prompt("Enter value you want to set");
+
+        // Save the key-value pair in localStorage:-
+        localStorage.setItem(key, value);
+
+        // Print the stored value to the console:-
+        console.log(`The value at ${key} is ${localStorage.getItem(key)}`);
+
+        // If the key is "red" or "favcol", remove it after 2 seconds:-
+        if (key === "red" || key === "favcol") {
+            setTimeout(() => {
+                localStorage.removeItem(key);
+                console.log(`${key} removed from localStorage`);
+            }, 2000);
+        }
+
+        // If the key is "0", clear the entire localStorage:-
+        else if (key === "0") {
+            localStorage.clear();
+            console.log("LocalStorage has been cleared.");
+
+            // Print total number of items (should be 0):-
+            console.log(`Total items in localStorage: ${localStorage.length}`);
+        }
+
+        // For all other keys, just print storage info:-
+        else {
+            // Print how many total items are in localStorage:-
+            console.log(`Total items in localStorage: ${localStorage.length}`);
+
+            // Print the first key stored in localStorage:-
+            console.log(`First key in localStorage: ${localStorage.key(0)}`);
+
+            // Print the twelfth key (index 11), if it exists:-
+            console.log(`Second key in localStorage: ${localStorage.key(11)}`);
+        }
+    </script>
+
+    </script>
+</body>
+
+</html>
