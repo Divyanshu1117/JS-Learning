@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacker Man</title>
+</head>
+<style type="text/css">
+    @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+    html,
+    body {
+        height: 100%;
+        width: 100%;
+    }
+
+    body {
+        color: rgb(17, 203, 17);
+        font-size: 25px;
+        background: black;
+        font-family: "Lato", sans-serif;
+    }
+</style>
+
+<body>
+    <div id="text"></div>
+    <script type="text/javascript">
+        let a = [
+            "Initializing Hack Tool...",
+            "Connecting to FACEBOOK...",
+            "Connection failed.. Retrying...",
+            "Connecting to server 1...",
+            "Connected Successfully...",
+            "Username I am Divyanshu...",
+            "Trying Brute Force...",
+            "200K passwords tried...",
+            "Match not found...",
+            "Another 200K passwords tried...",
+            "Match found...",
+            "Accessing Account...",
+            "Hack Successful..."
+        ];
+
+        const sleep = async (seconds) => {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve(true);
+                }, seconds * 1000);
+            });
+        };
+
+        const showHack = async (message) => {
+            await sleep(2);
+            text.innerHTML = text.innerHTML + message + "<br>";
+        };
+
+        (async () => {
+            for (let i = 0; i < a.length; i++) {
+                await showHack(a[i]);
+            }
+        })();
+
+    </script>
+</body>
+
+</html>
