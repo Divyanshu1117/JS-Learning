@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        class RailwayForm {
+            constructor(givenname, trainno, address) {
+                console.log("Constructor Called..." + givenname + " " + trainno);
+                this.name = givenname;
+                this.trainno = trainno;
+                this.address = address;
+            }
+            preview() {
+                alert(this.name + ": Your form is for train number: " + this.trainno + " and your address is " + this.address);
+            }
+
+            submit() {
+                alert(this.name + ": Your form is submitted for train number: " + this.trainno);
+            }
+
+            cancel() {
+                alert(this.name + ": This form is cancelled for train number: " + this.trainno);
+                this.trainno = 0;
+            }
+        }
+        let divyanshuForm = new RailwayForm("Divyanshu", 13488, "420, Pacific Ocean, Ocean, Bihar - 0000555");
+        divyanshuForm.preview();
+        divyanshuForm.submit();
+        divyanshuForm.cancel();
+    </script>
+</body>
+
+</html>

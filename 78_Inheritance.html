@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        class Animal {
+            constructor(name, color) {
+                this.name = name;
+                this.color = color;
+            }
+
+            run() {
+                console.log(this.name + " is running!");
+            }
+
+            shout() {
+                console.log(this.name + " is shouting!");
+            }
+        }
+
+        class Monkey {
+            constructor(name, color) {
+                this.name = name;
+                this.color = color;
+            }
+
+            run() {
+                console.log(this.name + " is running!");
+            }
+
+            shout() {
+                console.log(this.name + " is shouting!");
+            }
+
+            eatBanana() {
+                console.log(this.name + " is eating a banana!");
+            }
+        }
+
+        let ani = new Animal("Bruno", "White");
+        let m = new Monkey("Chimpu", "Orange");
+
+        ani.shout();
+        m.eatBanana();
+    </script>
+
+</body>
+
+</html>

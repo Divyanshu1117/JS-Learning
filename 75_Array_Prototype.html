@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        let a = {
+            name1: "Harry",
+            language: "JavaScript",
+            run: () => {
+                alert("self run");
+            }
+        }
+        console.log(a);
+
+        let p = {
+            run: () => {
+                alert("run");
+            }
+        }
+
+        p.__proto__ = {
+            name: "Divyanshu"
+        }
+        a.__proto__ = p;
+        a.run();
+        console.log(a.name);
+    </script>
+</body>
+
+</html>

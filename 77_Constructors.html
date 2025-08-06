@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        class RailwayForm {
+            constructor(givenname, trainno) {
+                console.log("Constructor Called..." + givenname + " " + trainno);
+                this.name = givenname;
+                this.trainno = trainno;
+            }
+            submit() {
+                alert(this.name + ": Your form is submitted for train number: " + this.trainno);
+            }
+            cancel() {
+                alert(this.name + ": This form is cancelled for train number: " + this.trainno);
+            }
+        }
+
+        // Create & fill form for Divyanshu:-
+        let divyanshuForm = new RailwayForm("Divyanshu", 145316);
+        divyanshuForm.submit();
+
+        // Create & fill forms for Rohan:-
+        let rohanForm1 = new RailwayForm("Rohan", 222420);
+        let rohanForm2 = new RailwayForm("Rohan", 2229211);
+
+        rohanForm1.submit();
+        rohanForm1.cancel();
+
+        rohanForm2.submit();
+    </script>
+</body>
+
+</html>

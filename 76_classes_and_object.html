@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        class RailwayForm {
+            submit() {
+                alert(this.name + ": Your form is submitted for train number: " + this.trainno);
+            }
+            cancel() {
+                alert(this.name + ": This form is cancelled for train number: " + this.trainno);
+            }
+            fill(givenname, trainno) {
+                this.name = givenname;
+                this.trainno = trainno;
+            }
+        }
+
+        // Create a form for Divyanshu:-
+        let divyanshuForm = new RailwayForm();
+        // Fill the form with Divyanshu's Details:-
+        divyanshuForm.fill("Divyanshu", 145316);
+        divyanshuForm.submit();
+
+        // Create forms for Rohan:-
+        let rohanForm1 = new RailwayForm();
+        let rohanForm2 = new RailwayForm();
+
+        // Fill the form with Roahn's Details:-
+        rohanForm1.fill("Rohan", 222420);
+        rohanForm2.fill("Rohan", 2229211);
+
+        rohanForm1.submit();
+        rohanForm1.cancel();
+
+        rohanForm2.submit();
+    </script>
+</body>
+
+</html>

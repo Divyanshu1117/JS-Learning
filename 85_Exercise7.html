@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Password Generator</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        class Password {
+            constructor(length) {
+                this.length = length;
+            }
+
+            generatePassword() {
+                // Required characters:-
+                let lowercase = "abcdefghijklmnopqrstuvwxyz";
+                let uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                let special = "!@#$%^&*";
+
+                // Pick one from each:-
+                let pass = "";
+                pass += lowercase[Math.floor(Math.random() * lowercase.length)];
+                pass += uppercase[Math.floor(Math.random() * uppercase.length)];
+                pass += special[Math.floor(Math.random() * special.length)];
+
+                // Combine all sets for remaining characters:-
+                let allChars = lowercase + uppercase + special;
+                for (let i = 3; i < this.length; i++) {
+                    pass += allChars[Math.floor(Math.random() * allChars.length)];
+                }
+                return pass;
+            }
+        }
+        let myPass = new Password(8);
+        let generated = myPass.generatePassword();
+        console.log("Generated Password:", generated);
+        alert("Your Password is: " + generated);
+    </script>
+</body>
+
+</html>

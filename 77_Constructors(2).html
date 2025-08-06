@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        // Quick Quiz:- 
+        class User {
+            constructor(name, email, age) {
+                this.name = name;
+                this.email = email;
+                this.age = age;
+                console.log(`New user created: ${this.name}`);
+            }
+
+            greet() {
+                alert(`Welcome, ${this.name}!`);
+            }
+
+            isAdult() {
+                return this.age >= 18;
+            }
+
+            updateEmail(newEmail) {
+                this.email = newEmail;
+                alert(`${this.name}'s email updated to ${this.email}`);
+            }
+        }
+
+        // Testing the class:-
+        let user1 = new User("Divyanshu", "divyanshu@example.com", 21);
+        user1.greet();                    // Alert: Welcome, Divyanshu!
+        console.log(user1.isAdult());    // true
+        user1.updateEmail("div@example.com"); // Alert: email updated
+
+        // Another user:-
+        let user2 = new User("Rohan", "rohan@gmail.com", 15);
+        console.log(user2.isAdult());    // false
+    </script>
+
+</body>
+
+</html>
