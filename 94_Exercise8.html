@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Accessible Alarm Clock</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 100px;
+            background-color: #f9f9f9;
+        }
+
+        #clock {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        select,
+        button {
+            font-size: 18px;
+            margin: 5px;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="clock">00:00:00 AM</div>
+
+    <div>
+        <select id="hour" aria-label="Select hour">
+            <option value="default" disabled selected>Select Hour</option>
+        </select> :
+
+        <select id="minute" aria-label="Select minute">
+            <option value="default" disabled selected>Select Minute</option>
+        </select>
+
+        <select id="ampm" aria-label="Select AM or PM">
+            <option value="default" disabled selected>Select AM/PM</option>
+            <option value="AM">AM</option>
+            <option value="PM">PM</option>
+        </select>
+
+        <button onclick="setAlarm()">Set Alarm</button>
+    </div>
+
+    <audio id="alarm-audio" src="https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg" preload="auto"></audio>
+
+    <script>
+        const clock = document.getElementById("clock");
+        const alarmAudio = document.getElementById("alarm-audio");
+        let alarmTime = null;
+
+        // Populate hour and minute dropdowns
+        const hourSelect = document.getElementById("hour");
+        const minuteSelect = document.getElementById("minute");
+
+        for (let h = 1; h <= 12; h++) {
+            const option = document.createElement("option");
+            option.value = h;
+            option.textContent = h;
+            hourSelect.appendChild(option);
+        }
+
+        for (let m = 0; m < 60; m++) {
+            const mm = m < 10 ? "0" + m : m;
+            const option = document.createElement("option");
+            option.value = mm;
+            option.textContent = mm;
+            minuteSelect.appendChild(option);
+        }
+
+        function updateClock() {
+            const now = new Date();
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+            let seconds = now.getSeconds();
+            const ampm = hours >= 12 ? 'PM' : 'AM';
+
+            hours = hours % 12 || 12;
+            const hh = hours;
+            const mm = minutes < 10 ? "0" + minutes : minutes;
+            const ss = seconds < 10 ? "0" + seconds : seconds;
+
+            const currentTime = `${hh}:${mm}:${ss} ${ampm}`;
+            clock.innerText = currentTime;
+
+            // Check alarm match (ignoring seconds)
+            const timeToCheck = `${hh}:${mm} ${ampm}`;
+            if (alarmTime === timeToCheck) {
+                alarmAudio.play();
+            }
+        }
+
+        function setAlarm() {
+            const hour = hourSelect.value;
+            const minute = minuteSelect.value;
+            const ampm = document.getElementById("ampm").value;
+
+            if (hour === "default" || minute === "default" || ampm === "default") {
+                alert("Please select hour, minute, and AM/PM.");
+                return;
+            }
+
+            alarmTime = `${hour}:${minute} ${ampm}`;
+            alert("Alarm set for " + alarmTime);
+        }
+
+        setInterval(updateClock, 1000);
+    </script>
+
+</body>
+
+</html>

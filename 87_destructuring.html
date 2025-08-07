@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuing Assignment and Spread Operator</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        let arr = [3, 5, 8, 9, 12, 14];
+        // let [a, b, c, d, ...rest] = arr;
+        // console.log(a, b, c, d, rest);
+
+        // No need to do this:-
+        // let a = arr[0];
+        // let b = arr[1];
+
+        // let [a, , b, ...rest] = arr;
+        // console.log(a, b, rest);
+
+        let { a, b } = { a: 1, b: 5 };
+        // console.log(a, b);
+
+        // Spread Operator:-
+        let arr1 = [3, 5, 8];
+        let obj1 = { ...arr1 }
+        console.log(obj1);
+
+        function sum(v1, v2, v3) {
+            return v1 + v2 + v3;
+        };
+        console.log(sum(...arr1));
+
+        let obj2 = {
+            name: "Divyanshu",
+            company: "Company xyz",
+            address: "xyz"
+        }
+        console.log({ ...obj2, name: "Vashishth", company: "Company abc" });
+        // console.log({ name: "Vashishth", company: "Company abc", ...obj2 }); // This will print the obj2 object without changing any values:-
+
+        // Quick Quiz:-
+        const a1 = "the", b1 = "no";
+        const c = { a1, b1 };
+        console.log(c);
+        // Output:-
+        // { a: 'the', b: 'no' }
+    </script>
+</body>
+
+</html>
