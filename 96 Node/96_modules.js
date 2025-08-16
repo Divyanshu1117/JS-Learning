@@ -41,4 +41,7 @@ async function createPDF() {
 
 createPDF();
 
-// npm install html-pdf-node handlebars fs path 
+// npm install html-pdf-node handlebars fs path
+// npm install
+// npm init -y
+// npm install handlebars html-pdf-node puppeteer@latest
