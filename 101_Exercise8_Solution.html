@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarm Example</title>
+</head>
+
+<body>
+    <div id="time"></div>
+    <div id="alarm"></div>
+
+    <script type="text/javascript">
+        function play() {
+            var audio = new Audio('https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3');
+            audio.play();
+        }
+
+        // Show current time every second
+        setInterval(() => {
+            let d = new Date();
+            document.getElementById("time").innerHTML = d.toString(); // full date+time
+        }, 1000);
+
+        const setAlarm = (seconds) => {
+            let start = new Date().getTime();
+
+            // Alarm trigger
+            setTimeout(() => {
+                play();
+                document.getElementById("alarm").innerHTML = "⏰ Alarm is ringing!";
+            }, seconds * 1000);
+
+            // Countdown update
+            let countdown = setInterval(() => {
+                let now = new Date().getTime();
+                let secondsLeft = Math.floor(((start + seconds * 1000) - now) / 1000);
+
+                if (secondsLeft <= 0) {
+                    clearInterval(countdown);
+                } else {
+                    document.getElementById("alarm").innerHTML =
+                        "Alarm ringing in " + secondsLeft + " seconds";
+                }
+            }, 1000);
+        }
+        
+        let s = prompt("After how many seconds do you want an alarm?");
+        setAlarm(parseInt(s));
+    </script>
+</body>
+
+</html>
